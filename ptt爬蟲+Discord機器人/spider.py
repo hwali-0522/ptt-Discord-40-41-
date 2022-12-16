@@ -104,9 +104,11 @@ def help():  # 命令說明
     print("*********************************")
     print("5: page finding (particular pages from 'a' to 'b')")
 
+command_ = ''
 
 while command_ != "0":  # 主程式，當回覆0，停止程式
-    command_ = str(input())
+    
+    command_ = str(input('If you do not know what to do, type help" to list the commands.\n'))
     if command_ == "help":  # 列出命令
         help()
     elif command_ == "1":
