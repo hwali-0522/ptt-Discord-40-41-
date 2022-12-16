@@ -21,7 +21,7 @@ def PTT_board_finding():  # 找尋熱門看板
         print('\n\n')
 
 
-def PTT_page_finding_newest(board):
+def PTT_page_finding_newest(board):  # 爬最新的頁面
     url = 'https://www.ptt.cc/'
     web = requests.get('https://www.ptt.cc/bbs/%s/index.html' % board,
                        cookies={'over18': '1'})  # 將所要找尋的看板名稱加到網址中，加入cookies去迴避18歲警告
@@ -33,7 +33,7 @@ def PTT_page_finding_newest(board):
             print(url+i.find('a')['href'], end='\n\n')
 
 
-def PTT_page_finding_select(board):
+def PTT_page_finding_select(board):  # 爬指定頁面
     page_num = int(input("輸入你想要尋找的頁數"))  # 輸入想尋找的頁數
     url = 'https://www.ptt.cc/'
     web = requests.get("https://www.ptt.cc/bbs/%s/index%d.html" %
@@ -49,7 +49,7 @@ def PTT_page_finding_select(board):
                 print(url+i.find('a')['href'], end='\n\n')
 
 
-def PTT_page_finding_select_formHead(board):
+def PTT_page_finding_select_formHead(board):  # 從頭爬到指定頁數
     page_num = int(input("輸入你想要尋找到的頁數"))
     url = 'https://www.ptt.cc/'
     for j in range(1, page_num):
@@ -67,7 +67,7 @@ def PTT_page_finding_select_formHead(board):
                     print(url+i.find('a')['href'], end='\n\n')
 
 
-def PTT_page_finding_select_specific(board):
+def PTT_page_finding_select_specific(board):  # 特定頁數區間爬蟲
     page_num = int(input("輸入你想要尋找的頁數(頭)"))
     page_num_1 = int(input("輸入你想要尋找的頁數(尾)"))
     url = 'https://www.ptt.cc/'
@@ -86,7 +86,7 @@ def PTT_page_finding_select_specific(board):
                     print(url+i.find('a')['href'], end='\n\n')
 
 
-def help():
+def help():  # 命令說明
     print("help: list the commands")
     print("\n")
     print("*********************************")
@@ -105,9 +105,9 @@ def help():
     print("5: page finding (particular pages from 'a' to 'b')")
 
 
-while command_ != "0":
+while command_ != "0":  # 主程式，當回覆0，停止程式
     command_ = str(input())
-    if command_ == "help":
+    if command_ == "help":  # 列出命令
         help()
     elif command_ == "1":
         PTT_board_finding()
