@@ -41,7 +41,7 @@ def PTT_page_finding_select(board):  # 爬指定頁面
     soup = BeautifulSoup(web.text, 'html5lib')
     titles = soup.find_all('div', class_='title')
     if len(titles) == 0:
-        print("404 Not Found.")  # 如果伺服器未回應，便提醒用戶端
+        print("404 Not Found *_*")  # 如果伺服器未回應，便提醒用戶端
     else:
         for i in titles:
             if i.find('a') != None:
@@ -58,7 +58,7 @@ def PTT_page_finding_select_formHead(board):  # 從頭爬到指定頁數
         soup = BeautifulSoup(web.text, 'html5lib')
         titles = soup.find_all('div', class_='title')
         if len(titles) == 0:
-            print('404 not found ')
+            print('404 not found *_*')
             break
         else:
             for i in titles:
