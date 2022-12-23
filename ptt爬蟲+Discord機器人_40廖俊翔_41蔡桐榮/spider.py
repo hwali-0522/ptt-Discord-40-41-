@@ -87,6 +87,9 @@ def PTT_page_finding_select_specific(board):  # 特定頁數區間爬蟲
 
 
 def help():  # 命令說明
+    print("0: exit the system")
+    print("\n")
+    print("*********************************")
     print("help: list the commands")
     print("\n")
     print("*********************************")
